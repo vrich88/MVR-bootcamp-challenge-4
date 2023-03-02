@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="resetsheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Coding Quiz (vrich88-challenge4)</title>
+    <!-- javascript written Coding Quiz -->
 </head>
 <body>
-    
+    <header>
+        <section id="highScores">
+            View High Scores
+        </section>
+        <h1 id="title">CODING QUIZ</h1>
+        <section id="score">
+            <p>Your Score Timer</p>
+            <p id="timer"></p>
+        </section>
+    </header>
+    <main>
+        <section id="rules">
+            <h2>Rules:</h2>
+            <ul>
+                <li>Your score is your time remaining.</li>
+                <li>Try to answer the following code-related questions withing the time limit.</li>
+                <li>Keep in mind that <span>incorrect</span> answers will penalize your score/time by 10 seconds!</li>
+            </ul>
+        </section>
+        <section id="quiz">
+            <h2 id="questionText">
+                question space
+            </h2>
+            <button id="start">
+                > START <
+            </button>
+            <section id="moreText">
+                additional info
+            </section>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

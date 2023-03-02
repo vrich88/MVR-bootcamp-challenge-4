@@ -1,0 +1,80 @@
+:root { /* references for colors */
+    --blue: rgb(58, 152, 185);
+    --darkblue: rgb(20, 40, 80);
+    --cream: rgb(255, 241, 220);
+    --sand: rgb(232, 213, 196);
+    --wetsand: rgb(173, 142, 112);
+    --offwhite: rgb(238, 238, 238);
+    --yellow: rgb(255, 201, 60);
+}
+body { /* primary page styling */
+    background-color: var(--cream);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+header { /* primary header styling */
+    background-color: var(--blue);
+    color: var(--offwhite);
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+#title { /* styling fo the title of page */
+    width: 60%;
+    font-size: 300%;
+    color: var(--yellow);
+    text-align: center;
+    background: radial-gradient(circle, var(--darkblue) 0%, var(--blue) 100%);
+    padding: 25px;
+}
+#highScores { /* styling for the link to the high scores */
+    width: 20%;
+    text-align: center;
+}
+#score { /* styling for the score timer section*/
+    width: 20%;
+    text-align: center;
+}
+#timer {
+    font-size: 200%;
+    margin-top: -7px;
+}
+main { /* styling for the main content for the quiz */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+#rules {
+    width: 25%;
+    flex-wrap: wrap;
+    background-color: var(--sand);
+    color: var(--wetsand);
+    border-style: ridge;
+    border-radius: 25px;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+}
+#rules h2 { /* styling for rules heading */
+    text-align: center;
+}
+#rules ul { /* styling for rules list */
+    justify-content: space-around;
+    align-items: center;
+}
+#rules ul li {
+    
+}
+#quiz {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var(--sand);
+    color: var(--wetsand);
+    border-style: ridge;
+    border-radius: 25px;
+}
