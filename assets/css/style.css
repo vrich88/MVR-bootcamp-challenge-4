@@ -12,6 +12,7 @@ body { /* primary page styling */
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Zen Dots', cursive;
 }
 header { /* primary header styling */
     background-color: var(--blue);
@@ -20,7 +21,7 @@ header { /* primary header styling */
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
 }
 #title { /* styling fo the title of page */
     width: 60%;
@@ -28,53 +29,95 @@ header { /* primary header styling */
     color: var(--yellow);
     text-align: center;
     background: radial-gradient(circle, var(--darkblue) 0%, var(--blue) 100%);
+    border-radius: 900px;
     padding: 25px;
 }
-#highScores { /* styling for the link to the high scores */
+#scores-space { /* styling for the link to the high scores */
     width: 20%;
     text-align: center;
+    align-items: center;
+    border-color: var(--offwhite);
+    padding: 5px;
+    border: 3px;
+}
+#highScores { /* styling for high scores button */
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
+    background-color:  var(--blue);
+    color: var(--offwhite);
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Zen Dots', cursive;
+}
+#highScores:hover { /* styling for high scores button hover */
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 25px;
+    background-color:  var(--offwhite);
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 900;
 }
 #score { /* styling for the score timer section*/
     width: 20%;
+    font-size: 16px;
     text-align: center;
+    align-items: center;
 }
 #timer {
-    font-size: 200%;
+    font-size: 48px;
     margin-top: -7px;
 }
 main { /* styling for the main content for the quiz */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     padding: 15px;
 }
-#rules {
-    width: 25%;
+#rules { /* styling for the rules box */
+    width: 20%;
+    min-height: 300px;
     flex-wrap: wrap;
-    background-color: var(--sand);
-    color: var(--wetsand);
-    border-style: ridge;
+    background-color: var(--wetsand);
+    color: var(--sand);
     border-radius: 25px;
-    /* align-items: center; */
-    /* justify-content: space-around; */
+    align-self: flex-start;
 }
 #rules h2 { /* styling for rules heading */
     text-align: center;
 }
 #rules ul { /* styling for rules list */
+    width: 85%;
     justify-content: space-around;
     align-items: center;
+    list-style: none;
 }
-#rules ul li {
-    
+#rules ul li { /* styling to  */
+    padding-bottom: 20px;
+    padding-right: 20px;
+    text-align: justify;
 }
-#quiz {
-    width: 75%;
+.ruleemphasis { /* styling to call emphasis to incorrect answer penalization */
+    text-decoration: underline;
+}
+#quiz { /* styling for the space to take the quiz */
+    width: 80%;
+    min-height: 300px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color: var(--sand);
-    color: var(--wetsand);
-    border-style: ridge;
+    background-color: var(--wetsand);
+    color: var(--sand);
     border-radius: 25px;
+    align-items: center;
+    justify-content: space-around;
+}
+#questionText { /*  */
+    width: 85%;
+    text-align: justify;
+}
+.buttons { /*  */
+    width: 70%;
+    padding: 5px;
 }
