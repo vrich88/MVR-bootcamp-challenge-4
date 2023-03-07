@@ -106,7 +106,7 @@ let quiz = [
             // countdown by 1 second calculated in milliseconds
         }, 1000);
     };
-// function to generate quiz questions after start button
+// function to generate quiz questions after start button is clicked
     function showQuiz() {
         let current = 0; /* console.log(current); */
         let askQ = quiz[current].query; /* console.log(askQ); */
@@ -114,25 +114,29 @@ let quiz = [
         let askB = quiz[current].ansB; /* console.log(askB); */
         let askC = quiz[current].ansC; /* console.log(askC); */
         let askD = quiz[current].ansD; /* console.log(askD); */
-        let corrAns = quiz[current].correct;  console.log(corrAns); 
+        let corrAns = quiz[current].correct; console.log(corrAns);
+        // should loop to next question once an answer is clicked  -------- NOT WORKING?
         for (let i = current; i<quiz.length; i++) {
             questionEl.innerHTML = askQ;
             ansABtn.innerHTML = askA;
             ansBBtn.innerHTML = askB;
             ansCBtn.innerHTML = askC;
             ansDBtn.innerHTML = askD; console.log(quiz.length);
-        }; answer.addEventListener("click",checkAns);
+
+
+            
+        }; 
+        // adds check for correct or wrong answer on user click to add a time "bonus" of +5 or -10 when an answer button is clicked
+        answer.addEventListener("click",checkAns);
         function checkAns(event) {
             if (event.target.textContent == corrAns) {
                 alert("Correct! +5 seconds");
                 ansBonus = 5;
-                current++;
-                document.querySelector("#timer") + ansBonus
             } else {
                 alert("Wrong! -10 seconds");
                 ansBonus = -10;
             };
-        }
+        };
     };
     
 // add event listeners
