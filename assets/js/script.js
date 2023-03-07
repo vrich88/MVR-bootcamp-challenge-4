@@ -93,12 +93,12 @@ let quiz = [
     let highScore = document.querySelector("#highScores");
 // global variables in JavaScript
     let secondsLeft = 100;
-
+    let ansBonus = 0;
 // function to set the timer and adjust it to count down by 1 second and display it on the HTML and stop it at 0
     function setTime() {
         let timerInterval = setInterval(function () {
             secondsLeft--;
-            timeEl.textContent = secondsLeft;
+            timeEl.textContent = secondsLeft+ansBonus;
             // checks for a value of 0 in the timer and stops the function from running and call for function to create a append message of 0 in the timer
             if (secondsLeft === 0) {
                 clearInterval(timerInterval);
@@ -120,9 +120,21 @@ let quiz = [
             ansABtn.innerHTML = askA;
             ansBBtn.innerHTML = askB;
             ansCBtn.innerHTML = askC;
-            ansDBtn.innerHTML = askD;
-        }; 
+            ansDBtn.innerHTML = askD; console.log(quiz.length);
+        }; answer.addEventListener("click",checkAns);
+        function checkAns(event) {
+            if (event.target.textContent == corrAns) {
+                alert("Correct! +5 seconds");
+                ansBonus = 5;
+                current++;
+                document.querySelector("#timer") + ansBonus
+            } else {
+                alert("Wrong! -10 seconds");
+                ansBonus = -10;
+            };
+        }
     };
+    
 // add event listeners
     // start button event
     startBtn.addEventListener("click", function () {
