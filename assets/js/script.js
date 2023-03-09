@@ -71,7 +71,7 @@ let quiz = [
         ansD: "D.) stings",
         correct: "B.) prompt", /* correct */
     }];
-// identifies specific elements in the html
+// identifies elements in the html
     // timer identifier
     let timeEl = document.querySelector("#timer");
     // before quiz section
@@ -94,6 +94,7 @@ let quiz = [
 // global variables in JavaScript
     let secondsLeft = 100;
     let ansBonus = 0;
+    let timerInterval
 // function to set the timer and adjust it to count down by 1 second and display it on the HTML and stop it at 0
     function setTime() {
         let timerInterval = setInterval(function () {
@@ -116,12 +117,12 @@ let quiz = [
         let askD = quiz[current].ansD; /* console.log(askD); */
         let corrAns = quiz[current].correct; console.log(corrAns);
         // should loop to next question once an answer is clicked  -------- NOT WORKING?
-        for (let i = current; i<quiz.length; i++) {
+        for (let current = 0; current<quiz.length; current++) { /* console.log(quiz.length) */
             questionEl.innerHTML = askQ;
             ansABtn.innerHTML = askA;
             ansBBtn.innerHTML = askB;
             ansCBtn.innerHTML = askC;
-            ansDBtn.innerHTML = askD; console.log(quiz.length);
+            ansDBtn.innerHTML = askD;
 
 
             
