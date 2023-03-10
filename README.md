@@ -6,12 +6,15 @@ This repository is used to help quiz some JavaScript related terms and practices
 ## Usage
 Upon loading up this repository in a web browser, the user will be presented with a title screen that shows teh rules and the greeting encouraging them to "start" the quiz. Upon taking teh quiz, the user/player will be run through a series of questions that test their knowledge with a timer countdown serving as their score to encourage quickness in testing.  Wrong answers will penalize the player's time but correct answers will boost it. Once teh quiz is completed or the timer reaches zero, the player will be presented with their scores and prompted to enter their initials to save it to the "Hall of Records" which can also be viewed from the title screen to show the history of the scores for players taking the quiz from the local storage.
 
-[Deployed application]()
+[Deployed application](https://vrich88.github.io/MVR-bootcamp-challenge-4/)
 
-![screenshot]()
-![screenshot]()
-![screenshot]()
-![screenshot]()
+![screenshot](./assets/images/ScreenshotBcC4.png)
+
+## Future Improvements
+This repository has a few issues that need to be returned to in the future to improve the functionality of the code; including:
+    •Enhanced display of the High Scores to include a "rank"
+    •Timer reset/stop doesn't fully stop the "background" running of timer and will trigger events at the time of "0" even if quiz is completed
+    •General styling improvements to better enhance flow of quiz field
 
 ## Contributors
 Consulting and guidance used in the creation of this repository include peers and resources (in no order) as follows:

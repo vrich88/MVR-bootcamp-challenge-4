@@ -207,6 +207,8 @@ main { /* styling for the main content for the quiz */
     justify-content: space-around;
 }
 #leaderBoard { /* styling for sub section of the high scores board */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
@@ -227,6 +229,9 @@ h3 {
 }
 #localScoreBoard ol li { /* styling for the individual locally stored ranks recalled to be displayed */
     text-align: center;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
 }
 .hide { /* styling for class toggle visibility of elements */
     display: none;

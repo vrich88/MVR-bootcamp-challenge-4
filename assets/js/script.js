@@ -72,6 +72,8 @@ let quiz = [
         correct: "B.) prompt", /* correct */
     }];
 // identifies elements in the html
+    // high scores identifier
+    let HighScoresEl = document.querySelector("#highScores");
     // timer identifier
     let timeEl = document.querySelector("#timer");
     // before quiz section
@@ -114,7 +116,6 @@ let quiz = [
     let askD = quiz[current].ansD; /* console.log(askD); */
     let corrAns = quiz[current].correct; /* console.log(corrAns); */
     let recordedGrades = JSON.parse(localStorage.getItem("recordedGrades")) || []; console.log(recordedGrades);
-
 // functions used in quiz functionality
     // function to set the timer and adjust it to count down by 1 second and display it on the HTML and stop it at 0
     function setTime() {
@@ -210,9 +211,9 @@ let quiz = [
             return b.pScore - a.pScore
         });
         for (rank = 0; rank<recordedGrades.length; rank++) {
-            let pRanksCreate = document.createElement("li");
-            pRanksCreate.textContent = rank.value();
-            sortedRanks.appendChild(pRanksCreate);
+            // let pRanksCreate = document.createElement("li"); currently not functioning to set up a positioned rank based off the index of the locally stored saved grades
+            // pRanksCreate.textContent = rank.value();
+            // sortedRanks.appendChild(pRanksCreate);
             let pInitialsCreate = document.createElement("li");
             pInitialsCreate.textContent = recordedGrades[rank].pInput;
             sortedInitials.appendChild(pInitialsCreate);
@@ -234,7 +235,8 @@ let quiz = [
         showQuiz();
     });
     // check for correct/wrong answers event
-    answer.addEventListener("click",checkAns);
+    answer.addEventListener("click", checkAns);
     // save score event
-    svGrdBtn.addEventListener("click",saveLocalGrade);
+    svGrdBtn.addEventListener("click", saveLocalGrade);
     // show high scores event
+    HighScoresEl.addEventListener("click", showHallOfRecords);
