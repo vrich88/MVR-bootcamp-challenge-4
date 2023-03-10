@@ -14,13 +14,13 @@
 </head>
 <body>
     <header>
-        <section id="scores-space">
+        <section id="scores-link">
             <button id="highScores">
                 View High Scores
             </button>
         </section>
         <h1 id="title">CODING QUIZ</h1>
-        <section id="score">
+        <section id="clockFace">
             <p>Your Score Timer</p>
             <p id="timer"></p>
         </section>
@@ -38,7 +38,7 @@
         <section id="quiz">
             <section id="b4Quiz" class="hide">
                 <h2 id="welcome">When you're ready click</h2>
-                <button id="start"class="startBtn">> START <</button>
+                <button id="start"class="startBtn">&#62; START &#60;</button>
             </section>
             <section id="takeQuiz">
                 <h2 id="questionText"></h2>
@@ -49,14 +49,27 @@
                     <button id="ansD" class="ansBtn"></button>
                 </section>
             </section>
+            <section id="gradeArea" class="hide">
+                <h2 id="grade"></h2>
+                <input id="initialsInput" type="text" placeholder="---">
+                <button id="saveGradeBtn">&#62; SUBMIT SCORE &#60;</button>
+            </section>
+            <section id="recordedScores" class="hide">
+                <h2 id="scoreTitle">Hall of Records</h2>
+                <section id="leaderBoard">
+                    <section id="boardTitles">
+                        <h3>Rank</h3>
+                        <h3>Player Initials</h3>
+                        <h3>Scores</h3>
+                    </section>
+                    <section id="localScoreBoard">
+                        <ol id="sortedpRanks"></ol> 
+                        <ol id="sortedpInitials"></ol>
+                        <ol id="sortedpScores"></ol>
+                    </section>
+                </section>
+            </section>
         </section>
-
-        <!-- <section id="recordedScores">
-            <h3>High Scores</h3>
-            <h3>Player Initials</h3>
-            <p id="scoreInitials"></p>
-            <p id="scoreTime"></p>
-        </section> -->
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
