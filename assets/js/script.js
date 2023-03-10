@@ -1,7 +1,7 @@
 // Question and Answer object variables
 let quiz = [
     { /* Question 1 index 0 */
-        query: "What JavaScript used for?", 
+        query: "1.) What JavaScript used for?", 
         ansA: "A.) Makes the website look nice",
         ansB: "B.) Make the website interactive", /* correct */
         ansC: "C.) Give structure to website content",
@@ -9,11 +9,11 @@ let quiz = [
         correct: "B.) Make the website interactive",
     }, { /* Question 2 index 1 */
         query: "2.) What is the element within HTML that contains the JavaScript source?",
-        ansA: "A.) <JSON>",
-        ansB: "B.) <js>",
-        ansC: "C.) <link>",
-        ansD: "D.) <script>", /* correct */
-        correct: "D.) <script>",
+        ansA: "A.) "+"< "+"JSON"+" >",
+        ansB: "B.) "+"< "+"js"+" >",
+        ansC: "C.) "+"< "+"link"+" >",
+        ansD: "D.) "+"< "+"script"+" >", /* correct */
+        correct: "D.) "+"< "+"script"+" >",
     }, { /* Question 3 index 2 */
         query: "3.) How do you find a HTML element with JavaScript?",
         ansA: "A.) var",
@@ -78,6 +78,8 @@ let quiz = [
     let b4Quiz = document.querySelector("#b4Quiz");
     // start button identifier
     let startBtn = document.querySelector("#start");
+    // quiz section
+    let quizEl = document.querySelector("#takeQuiz");
     // quiz question identifier
     let questionEl = document.querySelector("#questionText");
     // answer button area identifier
@@ -94,7 +96,15 @@ let quiz = [
 // global variables in JavaScript
     let secondsLeft = 100;
     let ansBonus = 0;
-    let timerInterval
+    let timerInterval;
+    let current = 0; /* console.log(current); */
+    let askQ = quiz[current].query; /* console.log(askQ); */
+    let askA = quiz[current].ansA; /* console.log(askA); */
+    let askB = quiz[current].ansB; /* console.log(askB); */
+    let askC = quiz[current].ansC; /* console.log(askC); */
+    let askD = quiz[current].ansD; /* console.log(askD); */
+    let corrAns = quiz[current].correct; /* console.log(corrAns); */
+
 // function to set the timer and adjust it to count down by 1 second and display it on the HTML and stop it at 0
     function setTime() {
         let timerInterval = setInterval(function () {
@@ -107,42 +117,67 @@ let quiz = [
             // countdown by 1 second calculated in milliseconds
         }, 1000);
     };
-// function to generate quiz questions after start button is clicked
+// function to generate quiz question space after start button is clicked
     function showQuiz() {
-        let current = 0; /* console.log(current); */
-        let askQ = quiz[current].query; /* console.log(askQ); */
-        let askA = quiz[current].ansA; /* console.log(askA); */
-        let askB = quiz[current].ansB; /* console.log(askB); */
-        let askC = quiz[current].ansC; /* console.log(askC); */
-        let askD = quiz[current].ansD; /* console.log(askD); */
-        let corrAns = quiz[current].correct; console.log(corrAns);
-        // should loop to next question once an answer is clicked  -------- NOT WORKING?
-        for (let current = 0; current<quiz.length; current++) { /* console.log(quiz.length) */
+        showSection();
             questionEl.innerHTML = askQ;
             ansABtn.innerHTML = askA;
             ansBBtn.innerHTML = askB;
             ansCBtn.innerHTML = askC;
             ansDBtn.innerHTML = askD;
-
-
-            
         }; 
-        // adds check for correct or wrong answer on user click to add a time "bonus" of +5 or -10 when an answer button is clicked
-        answer.addEventListener("click",checkAns);
+// adds check for correct or wrong answer on user click to add a time "bonus" of +5 or -10 when an answer button is clicked
+    answer.addEventListener("click",checkAns);
         function checkAns(event) {
             if (event.target.textContent == corrAns) {
                 alert("Correct! +5 seconds");
-                ansBonus = 5;
+                scoreBonus(5);
+                nextQ();
             } else {
                 alert("Wrong! -10 seconds");
-                ansBonus = -10;
+                scoreBonus(-10);
+                nextQ();
             };
         };
-    };
-    
+// function to advance quiz question
+function nextQ() {
+    current++;
+    if (current < 10) {
+        askQ = quiz[current].query;
+        askA = quiz[current].ansA;
+        askB = quiz[current].ansB;
+        askC = quiz[current].ansC;
+        askD = quiz[current].ansD;
+        corrAns = quiz[current].correct;
+
+        questionEl.innerHTML = askQ;
+        ansABtn.innerHTML = askA;
+        ansBBtn.innerHTML = askB;
+        ansCBtn.innerHTML = askC;
+        ansDBtn.innerHTML = askD; 
+    } else {
+        grade();
+    }
+};
+// function to set answer bonus/penalty
+function scoreBonus(ansBonus) {
+    secondsLeft += ansBonus
+};
+// function to end quiz
+function grade() {
+    clearInterval(timerInterval);
+    questionEl.classList.toggle("hide");
+    answer.classList.toggle("hide");
+}
+// function to toggle hidden class identifiers
+showSection();
+function showSection() {
+    b4Quiz.classList.toggle("hide");
+    quizEl.classList.toggle("hide");
+};
 // add event listeners
     // start button event
     startBtn.addEventListener("click", function () {
         setTime();
         showQuiz();
-    })
+    });

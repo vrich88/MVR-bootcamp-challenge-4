@@ -77,7 +77,7 @@ main { /* styling for the main content for the quiz */
 }
 #rules { /* styling for the rules box */
     width: 20%;
-    min-height: 300px;
+    min-height: 375px;
     flex-wrap: wrap;
     background-color: var(--wetsand);
     color: var(--sand);
@@ -103,7 +103,7 @@ main { /* styling for the main content for the quiz */
 }
 #quiz { /* styling for the space to take the quiz */
     width: 80%;
-    min-height: 300px;
+    min-height: 375px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -113,11 +113,28 @@ main { /* styling for the main content for the quiz */
     align-items: center;
     justify-content: space-around;
 }
-#questionText { /*  */
+#questionText { /* styling for the questions to be asked */
     width: 85%;
     text-align: justify;
 }
-.buttons { /*  */
-    width: 70%;
-    padding: 5px;
+.startBtn { /* styling for start button */
+    font-family: 'Zen Dots', cursive;
+    font-size: 200%;
+    color: var(--yellow);
+    background-color: var(--wetsand);
+    padding: 25px 50px;
+    border: 0px;
+    border-radius: 50px;
+}
+.startBtn:hover { /* styling for start button */
+    font-family: 'Zen Dots', cursive;
+    font-size: 200%;
+    color: var(--wetsand);
+    background-color: var(--yellow);
+    padding: 25px 50px;
+    border: 0px;
+    border-radius: 50px;
+}
+.hide { /* styling for class toggle visibility of elements */
+    display: none;
 }
